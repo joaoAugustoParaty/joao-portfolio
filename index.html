@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/joao-personagem-recortado.png" />
+    <link rel="preload" href="/fonts/big-shoulders-300.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/manrope-400.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/hero-celestial-background.webp" as="image" type="image/webp" fetchpriority="high" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07090d" />
+    <meta name="description" content="Portfólio de João Augusto — professor de Matemática e desenvolvedor web." />
+    <meta name="author" content="João Augusto de Oliveira Néto" />
+    <meta name="keywords" content="João Augusto, desenvolvedor web, React, TypeScript, professor de Matemática, Diário Online" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="João Augusto — Desenvolvedor Web & Educador" />
+    <meta property="og:description" content="Educação, tecnologia e produtos digitais construídos com lógica e humanidade." />
+    <meta property="og:image" content="/og.png" />
+    <meta property="og:image:width" content="1734" />
+    <meta property="og:image:height" content="907" />
+    <meta property="og:image:alt" content="João Augusto — Desenvolvedor Web e Educador" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="João Augusto — Desenvolvedor Web & Educador" />
+    <meta name="twitter:description" content="Educação, tecnologia e produtos digitais construídos com lógica e humanidade." />
+    <meta name="twitter:image" content="/og.png" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "name": "Portfólio de João Augusto",
+        "mainEntity": {
+          "@type": "Person",
+          "name": "João Augusto de Oliveira Neto",
+          "jobTitle": "Desenvolvedor Web e Professor de Matemática",
+          "sameAs": [
+            "https://github.com/joaoaugustodeoliveiraneto",
+            "https://www.linkedin.com/in/joao-augusto-de-oliveira-neto/"
+          ]
+        }
+      }
+    </script>
+    <script>
+      try {
+        const savedTheme = localStorage.getItem('portfolio-theme')
+        document.documentElement.dataset.theme = savedTheme || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+      } catch { document.documentElement.dataset.theme = 'dark' }
+    </script>
+    <title>João Augusto — Desenvolvedor & Educador</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Este portfólio precisa de JavaScript habilitado para exibir todo o conteúdo interativo.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

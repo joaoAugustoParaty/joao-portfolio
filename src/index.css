@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@font-face { font-family: 'Big Shoulders Display'; src: url('/fonts/big-shoulders-300.ttf') format('truetype'); font-style: normal; font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Big Shoulders Display'; src: url('/fonts/big-shoulders-400.ttf') format('truetype'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Big Shoulders Display'; src: url('/fonts/big-shoulders-500.ttf') format('truetype'); font-style: normal; font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Big Shoulders Display'; src: url('/fonts/big-shoulders-600.ttf') format('truetype'); font-style: normal; font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('/fonts/cormorant-600.ttf') format('truetype'); font-style: normal; font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('/fonts/cormorant-italic-600.ttf') format('truetype'); font-style: italic; font-weight: 600; font-display: swap; }
+@font-face { font-family: 'DM Mono'; src: url('/fonts/dm-mono-400.ttf') format('truetype'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'DM Mono'; src: url('/fonts/dm-mono-500.ttf') format('truetype'); font-style: normal; font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Manrope'; src: url('/fonts/manrope-300.ttf') format('truetype'); font-style: normal; font-weight: 300; font-display: swap; }
+@font-face { font-family: 'Manrope'; src: url('/fonts/manrope-400.ttf') format('truetype'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Manrope'; src: url('/fonts/manrope-500.ttf') format('truetype'); font-style: normal; font-weight: 500; font-display: swap; }
+@font-face { font-family: 'Manrope'; src: url('/fonts/manrope-600.ttf') format('truetype'); font-style: normal; font-weight: 600; font-display: swap; }
+@font-face { font-family: 'Manrope'; src: url('/fonts/manrope-700.ttf') format('truetype'); font-style: normal; font-weight: 700; font-display: swap; }
+
+:root {
+  font-family: 'Manrope', sans-serif;
+  color: var(--text);
+  background: #07090d;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #061019;
+  --surface: #0a1720;
+  --surface-2: #10232d;
+  --text: #e8d6b5;
+  --muted: #a69b89;
+  --line: rgba(205, 177, 130, .18);
+  --accent: #b68a55;
+  --accent-2: #ead7b5;
+  --wine: #243743;
+  --ember: #d36a12;
+  --spectral: #9abf67;
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+  --font-accent: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Manrope', Arial, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --ink: #e9e3d6;
+  --surface: #f5f0e5;
+  --surface-2: #d8d7d0;
+  --text: #172029;
+  --muted: #59666b;
+  --line: rgba(23, 32, 41, .17);
+  --accent: #315f6d;
+  --accent-2: #263c43;
+  --wine: #9eafb3;
+  --ember: #bd5f20;
+  --spectral: #4e7b39;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { overflow-x: clip; scroll-behavior: smooth; scroll-padding-top: 6rem; }
+body { margin: 0; min-width: 320px; min-height: 100vh; overflow-x: clip; background: var(--ink); color: var(--text); transition: background-color .45s ease, color .45s ease; }
+button, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+::selection { background: var(--accent); color: var(--ink); }
+:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .hero::before { background-position: center !important; }
+  .hero-visual, .celestial-pulses { transform: none !important; }
+}
