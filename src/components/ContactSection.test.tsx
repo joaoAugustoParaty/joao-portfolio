@@ -17,6 +17,7 @@ describe('ContactSection', () => {
     render(<ContactSection text={copy.pt} />)
 
     expect(screen.getByRole('link', { name: /LinkedIn/ })).toHaveAttribute('href', linkedinProfileUrl)
+    expect(linkedinProfileUrl).toBe('https://www.linkedin.com/in/jo%C3%A3o-augusto-oliveira-714a57150/')
   })
 
   it('copia o endereço de e-mail e informa o sucesso', async () => {
