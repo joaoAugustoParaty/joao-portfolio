@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { ArrowUpRight, BriefcaseBusiness, Check, Code2, Copy, Mail } from 'lucide-react'
 import type { PortfolioCopy } from '../data/content'
-import { githubProfileUrl } from '../data/profile'
+import { githubProfileUrl, linkedinProfileUrl } from '../data/profile'
 import { buildMailtoLink, emailAddress } from '../utils/mailto'
 import { SectionHeading } from './SectionHeading'
 
@@ -30,7 +30,7 @@ export function ContactSection({ text }: ContactSectionProps) {
     <div className="section-shell">
       <SectionHeading index="06" label={text.contactLabel} title={text.contactTitle} description={text.contactDescription} />
       <div className="contact-layout">
-        <div className="contact-info reveal"><div className="contact-glyph" aria-hidden="true">✦</div><p>{text.direct}</p><a href={`mailto:${emailAddress}`}><Mail /> {emailAddress}</a><button className="copy-email" type="button" onClick={copyEmail}>{copyStatus === 'success' ? <Check /> : <Copy />}{copyStatus === 'success' ? text.copiedEmail : copyStatus === 'error' ? text.copyError : text.copyEmail}</button><span className="sr-only" aria-live="polite">{copyStatus === 'success' ? text.copiedEmail : copyStatus === 'error' ? text.copyError : ''}</span><div className="socials"><a href={githubProfileUrl} target="_blank" rel="noreferrer"><Code2 /> GitHub<span className="sr-only"> — {text.newTab}</span></a><a href="https://www.linkedin.com/in/joao-augusto-de-oliveira-neto/" target="_blank" rel="noreferrer"><BriefcaseBusiness /> LinkedIn<span className="sr-only"> — {text.newTab}</span></a></div></div>
+        <div className="contact-info reveal"><div className="contact-glyph" aria-hidden="true">✦</div><p>{text.direct}</p><a href={`mailto:${emailAddress}`}><Mail /> {emailAddress}</a><button className="copy-email" type="button" onClick={copyEmail}>{copyStatus === 'success' ? <Check /> : <Copy />}{copyStatus === 'success' ? text.copiedEmail : copyStatus === 'error' ? text.copyError : text.copyEmail}</button><span className="sr-only" aria-live="polite">{copyStatus === 'success' ? text.copiedEmail : copyStatus === 'error' ? text.copyError : ''}</span><div className="socials"><a href={githubProfileUrl} target="_blank" rel="noreferrer"><Code2 /> GitHub<span className="sr-only"> — {text.newTab}</span></a><a href={linkedinProfileUrl} target="_blank" rel="noreferrer"><BriefcaseBusiness /> LinkedIn<span className="sr-only"> — {text.newTab}</span></a></div></div>
         <form className="contact-form reveal" onSubmit={handleSubmit}><div className="field"><label htmlFor="name">{text.name}</label><input id="name" name="name" type="text" autoComplete="name" required placeholder={text.namePlaceholder} /></div><div className="field"><label htmlFor="email">{text.email}</label><input id="email" name="email" type="email" autoComplete="email" required placeholder={text.emailPlaceholder} /></div><div className="field"><label htmlFor="message">{text.message}</label><textarea id="message" name="message" rows={4} required placeholder={text.messagePlaceholder} /></div><p className="form-note">{text.formNote}</p><button className="button button-primary" type="submit">{text.send} <ArrowUpRight size={18} /></button></form>
       </div>
     </div>

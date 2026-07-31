@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 import { copy } from '../data/content'
-import { githubProfileUrl } from '../data/profile'
+import { githubProfileUrl, linkedinProfileUrl } from '../data/profile'
 import { buildMailtoLink } from '../utils/mailto'
 import { ContactSection } from './ContactSection'
 
@@ -11,6 +11,12 @@ describe('ContactSection', () => {
     render(<ContactSection text={copy.pt} />)
 
     expect(screen.getByRole('link', { name: /GitHub/ })).toHaveAttribute('href', githubProfileUrl)
+  })
+
+  it('aponta para o perfil correto do LinkedIn', () => {
+    render(<ContactSection text={copy.pt} />)
+
+    expect(screen.getByRole('link', { name: /LinkedIn/ })).toHaveAttribute('href', linkedinProfileUrl)
   })
 
   it('copia o endereço de e-mail e informa o sucesso', async () => {
