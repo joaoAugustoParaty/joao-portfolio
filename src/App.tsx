@@ -10,6 +10,7 @@ import { ProjectsSection } from './components/ProjectsSection'
 import { ResumeSection } from './components/ResumeSection'
 import { SiteFooter } from './components/SiteFooter'
 import { TechnologiesSection } from './components/TechnologiesSection'
+import { WhatsAppButton } from './components/WhatsAppButton'
 import { copy } from './data/content'
 import { useParallax } from './hooks/useParallax'
 import { useReveal } from './hooks/useReveal'
@@ -68,6 +69,7 @@ function App() {
       <ResumeSection language={language} text={t} />
       <ContactSection text={t} />
     </main>
+    <WhatsAppButton language={language} />
     <SiteFooter text={t} />
   </div>
 }
