@@ -24,7 +24,7 @@ export function HeroSection(props: HeroSectionProps) {
       <p className="hero-lead">{props.heroLead}</p>
       <div className="hero-actions"><a className="button button-primary" href="#projetos">{props.explore} <ArrowDownRight size={18} /></a><a className="button button-ghost" href="#contato">{props.talk}</a></div>
     </div>
-    <div className="hero-visual reveal is-visible"><div className="portrait-frame"><img className="hero-character" src="/joao-personagem-recortado.webp" width="600" height="882" fetchPriority="high" alt={props.characterAlt} /></div></div>
+    <div className="hero-visual reveal is-visible"><div className="portrait-frame"><img className="hero-character" src={`${import.meta.env.BASE_URL}joao-personagem-recortado.webp`} width="600" height="882" fetchPriority="high" alt={props.characterAlt} /></div></div>
     <div className="hero-foot reveal is-visible"><span>{props.scroll}</span><i /><span>{props.location}</span></div>
   </section>
 }

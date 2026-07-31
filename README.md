@@ -43,4 +43,8 @@ npm run test
 
 ## Publicação
 
-Antes de publicar em uma subpasta, configure `base` em `vite.config.ts`. Em domínio raiz, a configuração atual pode ser mantida.
+O portfólio é publicado automaticamente no GitHub Pages após cada push para `main`:
+
+`https://joaoAugustoParaty.github.io/joao-portfolio/`
+
+O workflow executa testes, lint e build antes de publicar a pasta `dist`.

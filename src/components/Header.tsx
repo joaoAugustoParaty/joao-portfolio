@@ -53,7 +53,7 @@ export function Header({ language, theme, text, onLanguage, onTheme }: HeaderPro
         <button className="utility-button" type="button" onClick={onTheme} aria-label={theme === 'dark' ? text.themeLight : text.themeDark} title={theme === 'dark' ? text.themeLight : text.themeDark}>{theme === 'dark' ? <Sun /> : <Moon />}</button>
         <button className="utility-button language-button" type="button" onClick={onLanguage} aria-label={text.language} title={text.language}><Languages /><span>{language === 'pt' ? 'EN' : 'PT'}</span></button>
       </div>
-      <a className="nav-cta" href="/curriculo-joao-augusto.pdf" target="_blank" rel="noreferrer">{text.resume}<span className="sr-only"> — {language === 'pt' ? 'abre em nova aba' : 'opens in a new tab'}</span> <ArrowUpRight size={15} /></a>
+      <a className="nav-cta" href={`${import.meta.env.BASE_URL}curriculo-joao-augusto.pdf`} target="_blank" rel="noreferrer">{text.resume}<span className="sr-only"> — {language === 'pt' ? 'abre em nova aba' : 'opens in a new tab'}</span> <ArrowUpRight size={15} /></a>
     </nav>
   </header>
 }
