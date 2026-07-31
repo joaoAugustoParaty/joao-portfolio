@@ -9,9 +9,16 @@
 .skip-link:focus { transform: translateY(0); }
 .whatsapp-button { position: fixed; z-index: 45; right: max(24px, env(safe-area-inset-right)); bottom: max(24px, env(safe-area-inset-bottom)); display: grid; place-items: center; width: 58px; height: 58px; border: 1px solid rgba(211,106,18,.75); border-radius: 50%; background: #123f36; color: #f3ead8; box-shadow: 0 10px 32px rgba(0,0,0,.38), 0 0 0 5px rgba(211,106,18,.08); text-decoration: none; transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease; }
 .whatsapp-button::before { content: ''; position: absolute; inset: 5px; border: 1px solid rgba(243,234,216,.18); border-radius: inherit; pointer-events: none; }
-.whatsapp-button svg { width: 29px; height: 29px; fill: currentColor; }
+.whatsapp-button::after { content: ''; position: absolute; inset: -1px; border: 1px solid rgba(211,106,18,.52); border-radius: inherit; pointer-events: none; animation: whatsapp-halo 3.8s ease-out infinite; }
+.whatsapp-button svg { position: relative; z-index: 1; width: 29px; height: 29px; fill: currentColor; }
 .whatsapp-button:hover { transform: translateY(-4px); border-color: #d36a12; background: #176c54; box-shadow: 0 14px 38px rgba(0,0,0,.46), 0 0 0 6px rgba(211,106,18,.12); }
+.whatsapp-button:hover::after, .whatsapp-button:focus-visible::after { animation-play-state: paused; opacity: 0; }
 .whatsapp-button:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 4px; }
+@keyframes whatsapp-halo {
+  0%, 58% { opacity: 0; transform: scale(1); }
+  68% { opacity: .65; }
+  88%, 100% { opacity: 0; transform: scale(1.42); }
+}
 .ambient { position: fixed; z-index: 0; width: 500px; height: 500px; border-radius: 50%; filter: blur(120px); opacity: .12; pointer-events: none; }
 .ambient-one { top: -220px; right: -160px; background: #537f91; }
 .ambient-two { bottom: 10%; left: -300px; background: #24384c; }
@@ -274,4 +281,5 @@
 
 @media (prefers-reduced-motion: reduce) {
   .whatsapp-button { transition: none; }
+  .whatsapp-button::after { animation: none; }
 }
