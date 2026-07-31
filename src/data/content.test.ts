@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { copy } from './content'
+import { portfolioRepositoryUrl } from './profile'
 
 function contentShape(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(contentShape)
@@ -21,5 +22,10 @@ describe('conteúdo bilíngue', () => {
   it('mantém projetos e trajetória na mesma ordem semântica', () => {
     expect(copy.en.projects.map(({ category }) => category)).toEqual(copy.pt.projects.map(({ category }) => category))
     expect(copy.en.journey.map(({ icon }) => icon)).toEqual(copy.pt.journey.map(({ icon }) => icon))
+  })
+
+  it('mantém o projeto do portfólio ligado ao repositório correto nos dois idiomas', () => {
+    expect(copy.pt.projects.find(({ category }) => category === 'web')?.href).toBe(portfolioRepositoryUrl)
+    expect(copy.en.projects.find(({ category }) => category === 'web')?.href).toBe(portfolioRepositoryUrl)
   })
 })

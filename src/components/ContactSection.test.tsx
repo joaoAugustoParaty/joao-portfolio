@@ -2,10 +2,17 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
 import { copy } from '../data/content'
+import { githubProfileUrl } from '../data/profile'
 import { buildMailtoLink } from '../utils/mailto'
 import { ContactSection } from './ContactSection'
 
 describe('ContactSection', () => {
+  it('aponta para o perfil correto do GitHub', () => {
+    render(<ContactSection text={copy.pt} />)
+
+    expect(screen.getByRole('link', { name: /GitHub/ })).toHaveAttribute('href', githubProfileUrl)
+  })
+
   it('copia o endereço de e-mail e informa o sucesso', async () => {
     const writeText = vi.fn().mockResolvedValue(undefined)
     const user = userEvent.setup()

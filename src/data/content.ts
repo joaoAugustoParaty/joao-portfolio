@@ -1,4 +1,5 @@
 import type { PortfolioContent, PortfolioCopy } from './types'
+import { portfolioRepositoryUrl } from './profile'
 
 export const copy = {
   pt: {
@@ -21,7 +22,7 @@ export const copy = {
     projects: [
       { title: 'Diário Online', category: 'education' as const, description: 'Plataforma de gestão escolar que reúne frequência, conteúdos, notas, recuperação e dashboards administrativos em um único fluxo.', stack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'], featured: true },
       { title: 'Painel pedagógico', category: 'management' as const, description: 'Experimento de visualização de indicadores para transformar registros escolares em decisões mais claras e ágeis.', stack: ['React', 'Dashboards', 'UX'] },
-      { title: 'Portfólio autoral', category: 'web' as const, description: 'Presença digital responsiva construída para comunicar trajetória, projetos e competências com personalidade.', stack: ['Vite', 'Tailwind CSS', 'Acessibilidade'], href: 'https://github.com/joaoaugustodeoliveiraneto' },
+      { title: 'Portfólio autoral', category: 'web' as const, description: 'Presença digital responsiva construída para comunicar trajetória, projetos e competências com personalidade.', stack: ['Vite', 'Tailwind CSS', 'Acessibilidade'], href: portfolioRepositoryUrl },
     ],
     mainCase: 'case principal', concept: 'conceito', viewProject: 'Ver',
     caseLabel: 'Estudo de caso', caseTitle: 'Diário Online: tecnologia para a rotina escolar.',
@@ -63,7 +64,7 @@ export const copy = {
     projects: [
       { title: 'Diário Online', category: 'education' as const, description: 'A school management platform that brings attendance, content, grades, recovery and administrative dashboards into a single workflow.', stack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'], featured: true },
       { title: 'Educational dashboard', category: 'management' as const, description: 'A data visualization experiment designed to turn school records into clearer and faster decisions.', stack: ['React', 'Dashboards', 'UX'] },
-      { title: 'Author portfolio', category: 'web' as const, description: 'A responsive digital presence built to communicate experience, projects and skills with personality.', stack: ['Vite', 'Tailwind CSS', 'Accessibility'], href: 'https://github.com/joaoaugustodeoliveiraneto' },
+      { title: 'Author portfolio', category: 'web' as const, description: 'A responsive digital presence built to communicate experience, projects and skills with personality.', stack: ['Vite', 'Tailwind CSS', 'Accessibility'], href: portfolioRepositoryUrl },
     ],
     mainCase: 'main case', concept: 'concept', viewProject: 'View',
     caseLabel: 'Case study', caseTitle: 'Diário Online: technology for school routines.',
