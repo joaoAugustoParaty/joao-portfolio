@@ -14,7 +14,7 @@ describe('ContactSection', () => {
 
     await user.click(screen.getByRole('button', { name: 'Copiar e-mail' }))
 
-    expect(writeText).toHaveBeenCalledWith('joao.augusto.neto@gmail.com')
+    expect(writeText).toHaveBeenCalledWith('joaodrow@gmail.com')
     expect(screen.getByRole('button', { name: 'E-mail copiado' })).toBeInTheDocument()
     expect(screen.getByText('E-mail copiado', { selector: '[aria-live]' })).toBeInTheDocument()
   })
@@ -22,7 +22,7 @@ describe('ContactSection', () => {
   it('monta o link de contato com os dados codificados', () => {
     const link = buildMailtoLink(copy.pt, { name: 'João Teste', email: 'joao@exemplo.com', message: 'Olá, gostaria de conversar.' })
 
-    expect(link).toContain('mailto:joao.augusto.neto@gmail.com')
+    expect(link).toContain('mailto:joaodrow@gmail.com')
     expect(decodeURIComponent(link)).toContain('Contato pelo portfólio — João Teste')
     expect(decodeURIComponent(link)).toContain('E-mail para retorno: joao@exemplo.com')
   })

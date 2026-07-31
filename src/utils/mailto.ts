@@ -1,6 +1,6 @@
 import type { PortfolioCopy } from '../data/content'
 
-const emailAddress = 'joao.augusto.neto@gmail.com'
+const emailAddress = 'joaodrow@gmail.com'
 
 export type MailtoFields = {
   name: FormDataEntryValue | null
