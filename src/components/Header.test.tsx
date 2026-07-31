@@ -36,4 +36,13 @@ describe('Header', () => {
     expect(onTheme).toHaveBeenCalledOnce()
     expect(onLanguage).toHaveBeenCalledOnce()
   })
+
+  it('aponta para o currículo correspondente ao idioma', () => {
+    const { rerender } = render(<Header language="pt" theme="dark" text={copy.pt} onLanguage={onLanguage} onTheme={onTheme} />)
+
+    expect(screen.getByRole('link', { name: /Currículo/ })).toHaveAttribute('href', '/curriculo-joao-augusto.pdf')
+
+    rerender(<Header language="en" theme="dark" text={copy.en} onLanguage={onLanguage} onTheme={onTheme} />)
+    expect(screen.getByRole('link', { name: /Résumé/ })).toHaveAttribute('href', '/curriculo-joao-augusto-en.pdf')
+  })
 })

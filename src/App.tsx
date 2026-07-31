@@ -65,7 +65,7 @@ function App() {
       <TechnologiesSection text={t} />
       <JourneySection text={t} />
 
-      <ResumeSection text={t} />
+      <ResumeSection language={language} text={t} />
       <ContactSection text={t} />
     </main>
     <SiteFooter text={t} />

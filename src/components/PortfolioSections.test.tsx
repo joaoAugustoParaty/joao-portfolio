@@ -8,21 +8,22 @@ import { SiteFooter } from './SiteFooter'
 
 describe('seções institucionais', () => {
   it('renderiza o conteúdo principal em português', () => {
-    render(<><AboutSection text={copy.pt} /><MetricsSection text={copy.pt} /><ResumeSection text={copy.pt} /><SiteFooter text={copy.pt} /></>)
+    render(<><AboutSection text={copy.pt} /><MetricsSection text={copy.pt} /><ResumeSection language="pt" text={copy.pt} /><SiteFooter text={copy.pt} /></>)
 
     expect(screen.getByRole('heading', { name: /Entre números, pessoas e possibilidades/ })).toBeInTheDocument()
     expect(screen.getByRole('region', { name: 'Indicadores profissionais' })).toBeInTheDocument()
     expect(screen.getAllByRole('article')).toHaveLength(4)
+    expect(screen.getByRole('link', { name: /Baixar currículo/ })).toHaveAttribute('href', '/curriculo-joao-augusto.pdf')
     expect(screen.getByRole('link', { name: /Baixar currículo/ })).toHaveAttribute('download')
     expect(screen.getByText('Projetado e desenvolvido com intenção.')).toBeInTheDocument()
   })
 
   it('renderiza os mesmos elementos traduzidos para inglês', () => {
-    render(<><AboutSection text={copy.en} /><MetricsSection text={copy.en} /><ResumeSection text={copy.en} /><SiteFooter text={copy.en} /></>)
+    render(<><AboutSection text={copy.en} /><MetricsSection text={copy.en} /><ResumeSection language="en" text={copy.en} /><SiteFooter text={copy.en} /></>)
 
     expect(screen.getByRole('heading', { name: /Between numbers, people and possibilities/ })).toBeInTheDocument()
     expect(screen.getByRole('region', { name: 'Professional indicators' })).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: /Download résumé/ })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: /Download résumé/ })).toHaveAttribute('href', '/curriculo-joao-augusto-en.pdf')
     expect(screen.getByText('Designed and developed with intention.')).toBeInTheDocument()
   })
 })
